@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Mengão Ao Vivo 🔴⚫</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(90deg, #c00, #000);
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 10px 0 0;
+      font-size: 2em;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      max-width: 900px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+
+    .logo {
+      width: 80px;
+    }
+
+    .pix-button {
+      margin-top: 20px;
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .pix-modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .pix-modal-content {
+      background-color: #222;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    .pix-modal-content img {
+      width: 100%;
+    }
+
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="flamengo.png" alt="Escudo Flamengo" class="logo">
+    <h1>🔴 TV Mengão Ao Vivo ⚫</h1>
+    <p>Assista com a Nação Rubro-Negra!</p>
+  </header>
+
+  <!-- Player da Twitch -->
+  <iframe 
+    src="https://player.twitch.tv/?channel=mengaoaovivo&parent=tv-mengao.vercel.app" 
+    allowfullscreen>
+  </iframe>
+
+  <!-- Botão Pix -->
+  <button class="pix-button" onclick="document.getElementById('pixModal').style.display='block'">📲 Doe via Pix</button>
+
+  <div id="pixModal" class="pix-modal">
+    <div class="pix-modal-content">
+      <span class="close" onclick="document.getElementById('pixModal').style.display='none'">&times;</span>
+      <p>Escaneie o QR Code para doar:</p>
+      <img src="pix_qrcode.png" alt="Pix QR Code">
+      <p style="font-size: 0.9em; word-wrap: break-word;">Chave Pix: 88 92156-0617</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>TV Mengão - Projeto independente. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

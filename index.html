@@ -37,6 +37,26 @@
       height: 80vh;
       margin-top: 10px;
     }
+
+    #agenda {
+      background-color: #111;
+      padding: 20px;
+      text-align: left;
+    }
+
+    #agenda h2 {
+      color: #dc0a17;
+    }
+
+    #agenda ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #agenda li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
@@ -60,22 +80,15 @@
     width="100%">
   </iframe>
 
-  <!-- Chat alternativo com Tawk.to (opcional) -->
-  <!--
-  <script type="text/javascript">
-  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-  (function() {
-    var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/SEU_ID_DO_TAWK/default';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
-  </script>
-  -->
+  <!-- Agenda de Jogos -->
+  <section id="agenda">
+    <h2>📅 Próximos Jogos do Mengão</h2>
+    <ul>
+      <li><strong>10/05 - 21h00:</strong> Flamengo x Bahia (Brasileirão)</li>
+      <li><strong>15/05 - 20h30:</strong> Flamengo x Liga de Quito (Libertadores)</li>
+      <li><strong>18/05 - 16h00:</strong> Flamengo x Botafogo (Brasileirão)</li>
+    </ul>
+  </section>
 
 </body>
 </html>
-

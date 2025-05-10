@@ -4,116 +4,161 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TV Mengão Ao Vivo 🔴⚫</title>
+  <link rel="icon" href="flamengo.png" type="image/png">
   <style>
     body {
       margin: 0;
-      background-color: #111;
+      background: linear-gradient(to bottom, #c00, #000);
       color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Orbitron', sans-serif;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     header {
-      background: linear-gradient(90deg, #c00, #000);
+      width: 100%;
       padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
     }
 
-    h1 {
-      margin: 10px 0 0;
-      font-size: 2em;
+    header img {
+      width: 80px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .main-content {
+      margin-top: 120px;
+      width: 100%;
+      max-width: 1100px;
     }
 
     iframe {
       width: 100%;
-      height: 500px;
-      max-width: 900px;
+      height: 600px;
       border: none;
-      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     }
 
-    footer {
+    .donate-button {
       margin-top: 30px;
-      font-size: 0.9em;
-      opacity: 0.6;
-    }
-
-    .logo {
-      width: 80px;
-    }
-
-    .pix-button {
-      margin-top: 20px;
+      padding: 15px 30px;
       background-color: #ffcc00;
-      border: none;
       color: #000;
-      padding: 10px 20px;
-      font-size: 1em;
-      font-weight: bold;
+      border: none;
       border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: bold;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .donate-button:hover {
+      background-color: #f1a800;
+      transform: scale(1.05);
     }
 
     .pix-modal {
       display: none;
       position: fixed;
-      z-index: 999;
-      left: 0;
+      z-index: 9999;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
       overflow: auto;
-      background-color: rgba(0,0,0,0.8);
     }
 
     .pix-modal-content {
       background-color: #222;
       margin: 10% auto;
-      padding: 20px;
+      padding: 30px;
       border: 1px solid #888;
-      width: 300px;
-      border-radius: 10px;
+      width: 350px;
+      border-radius: 12px;
+      text-align: center;
     }
 
     .pix-modal-content img {
       width: 100%;
+      margin-bottom: 20px;
     }
 
     .close {
       color: #fff;
-      float: right;
       font-size: 24px;
       font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 20px;
       cursor: pointer;
     }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #fff;
+      opacity: 0.6;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header>
-    <img src="flamengo.png" alt="Escudo Flamengo" class="logo">
-    <h1>🔴 TV Mengão Ao Vivo ⚫</h1>
-    <p>Assista com a Nação Rubro-Negra!</p>
+    <img src="flamengo.png" alt="Escudo Flamengo">
+    <h1>TV Mengão Ao Vivo 🔴⚫</h1>
   </header>
 
-  <!-- Player da Twitch -->
- <iframe 
-  src="https://player.twitch.tv/?channel=ryan_rodriguesn_777&parent=meng-o-tv.vercel.app" 
-  allowfullscreen>
-</iframe>
+  <div class="main-content">
+    <!-- Player da Twitch -->
+    <iframe 
+      src="https://player.twitch.tv/?channel=ryan_rodriguesn_777&parent=meng-o-tv.vercel.app" 
+      allowfullscreen>
+    </iframe>
 
-  <!-- Botão Pix -->
-  <button class="pix-button" onclick="document.getElementById('pixModal').style.display='block'">📲 Doe via Pix</button>
+    <!-- Botão de Doação via Pix -->
+    <button class="donate-button" onclick="document.getElementById('pixModal').style.display='block'">📲 Doe via Pix</button>
 
-  <div id="pixModal" class="pix-modal">
-    <div class="pix-modal-content">
-      <span class="close" onclick="document.getElementById('pixModal').style.display='none'">&times;</span>
-      <p>Escaneie o QR Code para doar:</p>
-      <img src="pix_qrcode.png" alt="Pix QR Code">
-      <p style="font-size: 0.9em; word-wrap: break-word;">Chave Pix: 88 92156-0617</p>
+    <!-- Modal de Doação via Pix -->
+    <div id="pixModal" class="pix-modal">
+      <div class="pix-modal-content">
+        <span class="close" onclick="document.getElementById('pixModal').style.display='none'">&times;</span>
+        <h2>Escaneie o QR Code para doar</h2>
+        <img src="pix_qrcode.png" alt="Pix QR Code">
+        <p><strong>Chave Pix:</strong> 88 92156-0617</p>
+      </div>
     </div>
   </div>
 
   <footer>
-    <p>TV Mengão - Projeto independente. Todos os direitos reservados.</p>
+    <p>TV Mengão - Projeto independente. Todos os direitos reservados. <br><a href="https://www.instagram.com/ryan_rodriguesn_777/">Instagram</a></p>
   </footer>
+
 </body>
 </html>
